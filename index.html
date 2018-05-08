@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Server Home</title>
+        <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    </head>
+    <body>
+        <div id="body-header">
+            <h1>Server Home</h1>
+        </div>
+        
+        <div id="date-div">
+        </div>
+        
+        <script>
+            var socket = io();
+            
+            socket.on('date', function(){
+                var date = Date.prototype.getDay();
+                
+                document.getElementById("date-div").innerHTML = "Current date: " + date;
+            });
+        </script>
+    </body>
+</html>
